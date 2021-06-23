@@ -8,7 +8,11 @@ interface IUserRequest {
 }
 
 export class CreateUserService {
-  async execute({ name, email, admin }: IUserRequest) {
+  async execute({
+    name,
+    email,
+    admin,
+  }: IUserRequest): Promise<IUserRequest | Error> {
     const usersRepository = getCustomRepository(UsersRepositories);
 
     if (!email) {
