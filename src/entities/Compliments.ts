@@ -11,7 +11,7 @@ import { Tag } from './Tags';
 import { User } from './User';
 
 @Entity('compliments')
-export class Compliments {
+export class Compliment {
   @PrimaryColumn()
   readonly id: string;
 
