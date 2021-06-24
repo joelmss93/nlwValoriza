@@ -5,6 +5,7 @@ interface IUserRequest {
   name: string;
   email: string;
   admin?: boolean;
+  password: string;
 }
 
 export class CreateUserService {
@@ -12,6 +13,7 @@ export class CreateUserService {
     name,
     email,
     admin,
+    password,
   }: IUserRequest): Promise<IUserRequest | Error> {
     const usersRepository = getCustomRepository(UsersRepositories);
 
@@ -31,6 +33,7 @@ export class CreateUserService {
       name,
       email,
       admin,
+      password,
     });
 
     usersRepository.save(user);
