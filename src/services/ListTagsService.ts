@@ -1,13 +1,14 @@
 import { getCustomRepository } from 'typeorm';
+import { classToPlain } from 'class-transformer';
+
 import { TagsRepositories } from '../repositories/TagsRepositories';
-import { ITag } from './CreateTagService';
 
 export class ListTagsService {
-  async execute(): Promise<ITag[] | void> {
+  async execute() {
     const tagsRepositories = getCustomRepository(TagsRepositories);
 
     const tags = await tagsRepositories.find();
 
-    return tags;
+    return classToPlain(tags);
   }
 }

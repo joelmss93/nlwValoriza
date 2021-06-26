@@ -2,7 +2,7 @@ import { getCustomRepository } from 'typeorm';
 import { hash } from 'bcryptjs';
 import { UsersRepositories } from '../repositories/UsersRepositories';
 
-interface IUserRequest {
+export interface IUserRequest {
   name: string;
   email: string;
   admin?: boolean;
