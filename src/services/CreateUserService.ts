@@ -13,7 +13,7 @@ export class CreateUserService {
   async execute({
     name,
     email,
-    admin,
+    admin = false,
     password,
   }: IUserRequest): Promise<IUserRequest | Error> {
     const usersRepository = getCustomRepository(UsersRepositories);
