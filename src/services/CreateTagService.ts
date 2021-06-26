@@ -1,7 +1,7 @@
 import { getCustomRepository } from 'typeorm';
 import { TagsRepositories } from '../repositories/TagsRepositories';
 
-interface ITag {
+export interface ITag {
   name: string;
 }
 
